@@ -2,6 +2,7 @@ import { Box, Button, Card, Grid } from "@mui/material"
 import MainLayout from "../../layouts/MainLayout"
 import { useRouter } from "next/navigation"
 import { ITrack } from "../../types/track"
+import TrackList from "../../components/TrackList"
 
 const Index = () => {
 
@@ -50,6 +51,7 @@ const Index = () => {
                         <Button onClick={() => router.push('/tracks/create')}>Загрузить</Button>
                     </Grid>
                 </Box>
+                <TrackList tracks={tracks}/>
             </Card>
         </Grid>
     </MainLayout>
