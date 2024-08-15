@@ -11,7 +11,7 @@ const TrackProgress = ({left, right, onChange}: TrackProgressProps): ReactNode =
     return (
         <div style={{display: 'flex'}}>
             <input 
-                min={left} 
+                min={0} 
                 max={right} 
                 value={left} 
                 onChange={onChange} 

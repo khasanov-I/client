@@ -14,30 +14,11 @@ const Index = () => {
             artist: "Исполнитель 1",
             text: "Текст 1",
             listens: 0,
-            picture: "http://localhost:5000/image/unnamed.png",
-            audio: "http://localhost:5000/audio/polog.mp3",
+            picture: "http://localhost:5000/image/f6dcbe47-5aa3-430a-ac53-0bed7cfeab49.png",
+            audio: "audio/ad9b36ef-9b59-4997-ad0a-519250b62633.mp3",
             comments: [],
         },
-        {
-            _id: '2',
-            name: "Трек 2",
-            artist: "Исполнитель 2",
-            text: "Текст 2",
-            listens: 0,
-            picture: "http://localhost:5000/image/unnamed.png",
-            audio: "http://localhost:5000/audio/polog.mp3",
-            comments: [],
-        },
-        {
-            _id: '3',
-            name: "Трек 3",
-            artist: "Исполнитель 3",
-            text: "Текст 3",
-            listens: 0,
-            picture: "http://localhost:5000/image/unnamed.png",
-            audio: "http://localhost:5000/audio/polog.mp3",
-            comments: [],
-        }
+
     ]
 
     return <MainLayout>
