@@ -28,7 +28,9 @@ const Create = () => {
                 <Grid container direction='column' style={{padding: 20}}>
                     <TextField style={{marginTop: 10}} label='Название трека'/>
                     <TextField style={{marginTop: 10}} label='Имя автора'/>
-                    <TextField style={{marginTop: 10}} label='Текст песни' multiline rows={3}/>
+                    <TextField style={{marginTop: 10}} label='Текст песни' 
+                    multiline 
+                    rows={3}/>
                 </Grid>
             }
             {activeStep === 1 && 
