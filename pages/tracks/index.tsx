@@ -1,25 +1,23 @@
 import { Box, Button, Card, Grid } from "@mui/material"
 import MainLayout from "../../layouts/MainLayout"
 import { useRouter } from "next/navigation"
-import { ITrack } from "../../types/track"
 import TrackList from "../../components/TrackList"
+import { useTypedSelector } from "../../hooks/useTypeSelector"
+import { wrapper } from "../../store"
+import { fetchTracks } from "../../store/actions-creators/track"
+import { useDispatch } from "react-redux"
 
 const Index = () => {
 
     const router = useRouter()
-    const tracks: ITrack[] = [
-        {
-            _id: '1',
-            name: "Трек 1",
-            artist: "Исполнитель 1",
-            text: "Текст 1",
-            listens: 0,
-            picture: "http://localhost:5000/image/f6dcbe47-5aa3-430a-ac53-0bed7cfeab49.png",
-            audio: "audio/ad9b36ef-9b59-4997-ad0a-519250b62633.mp3",
-            comments: [],
-        },
 
-    ]
+    const {tracks, error} = useTypedSelector(state => state.track)
+
+    if (error) {
+        return <MainLayout>
+            <h1>{error}</h1>
+        </MainLayout>
+    }
 
     return <MainLayout>
         <Grid container justifyContent='center'>
@@ -39,3 +37,13 @@ const Index = () => {
 }
 
 export default Index
+
+export const getServerSideProps = wrapper.getServerSideProps(
+    (store) => async (context) => {
+        const dispatch = store.dispatch
+        await dispatch(await fetchTracks())
+        return {
+            props: {}
+        }
+    }
+)
